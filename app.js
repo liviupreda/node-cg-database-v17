@@ -21,7 +21,9 @@ var commentRoutes 	 = require("./routes/comments"),
 //mongoose.connect("mongodb+srv://liviu:caterinca@cluster0-rfqoo.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
 //mongoose.connect("mongodb://liviu:caterinca@cluster0-rfqoo.mongodb.net", { useNewUrlParser: true });
 //mongoose.connect(`mongodb://liviu:caterinca@cgdb-shard-00-00-rfqoo.mongodb.net:27017,cgdb-shard-00-01-rfqoo.mongodb.net:27017,cgdb-shard-00-02-rfqoo.mongodb.net:27017/test?retryWrites=true`);
-mongoose.connect("mongodb+srv://liviu:caterinca@cgdb-rfqoo.mongodb.net/test?retryWrites=true");
+//mongoose.connect("mongodb+srv://liviu:caterinca@cgdb-rfqoo.mongodb.net/test?retryWrites=true");
+
+mongoose.connect("mongodb://heroku_wv16kztx:hte5ea8lj6c09n1klc9hrvlvh9@ds019826.mlab.com:19826/heroku_wv16kztx");
 
 //mongodb+srv://liviu:<password>@cluster0-rfqoo.mongodb.net/test?retryWrites=true
 
