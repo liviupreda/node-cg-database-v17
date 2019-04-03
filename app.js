@@ -19,7 +19,10 @@ var commentRoutes 	 = require("./routes/comments"),
 
 //mongoose.connect("mongodb://localhost:27017/cgdb_v16", { useNewUrlParser: true });
 //mongoose.connect("mongodb+srv://liviu:caterinca@cluster0-rfqoo.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
-mongoose.connect("mongodb+srv://liviu:caterinca@cluster0-rfqoo.mongodb.net", { useNewUrlParser: true });
+//mongoose.connect("mongodb://liviu:caterinca@cluster0-rfqoo.mongodb.net", { useNewUrlParser: true });
+mongoose.connect(`mongodb://liviu:caterinca@cluster0-shard-00-00-rfqoo.mongodb.net:27017,cluster0-shard-00-01-rfqoo.mongodb.net:27017,cluster0-shard-00-02-rfqoo.mongodb.net:27017/test?retryWrites=true`,{ useNewUrlParser: true });
+
+//mongodb+srv://liviu:<password>@cluster0-rfqoo.mongodb.net/test?retryWrites=true
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -54,7 +57,7 @@ app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-app.listen(process.env.PORT || 3000, process.env.IP, function(){
+app.listen(process.env.PORT || 3000, function(){
 	console.log("CgDB Server running");
 });
 
