@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CgDB - based on YelpCamp</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">CgDB</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+
+					<% if(!currentUser){ %>
+						<li><a href="/login">Log in</a></li>
+						<li><a href="/register">Sign Up</a></li>
+
+					<% } else { %>
+						<li><a href="#">Signed In As <%= currentUser.username %></a></li>
+						<li><a href="/logout">Log Out</a></li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<% if(error && error.length > 0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if (success && success.length > 0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+
+		
