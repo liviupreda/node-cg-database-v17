@@ -17,7 +17,9 @@ var commentRoutes 	 = require("./routes/comments"),
 	indexRoutes 	 = require("./routes/index");
 
 
-mongoose.connect("mongodb://localhost:27017/cgdb_v16", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost:27017/cgdb_v16", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://liviu:caterinca@cluster0-rfqoo.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
