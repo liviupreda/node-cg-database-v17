@@ -19,7 +19,7 @@ var commentRoutes 	 = require("./routes/comments"),
 
 //mongoose.connect("mongodb://localhost:27017/cgdb_v16", { useNewUrlParser: true });
 //mongoose.connect("mongodb+srv://liviu:caterinca@cluster0-rfqoo.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
-mongoose.connect("mongodb+srv://liviu:caterinca@cluster0-rfqoo.mongodb.net/test?retryWrites=true");
+mongoose.connect("mongodb+srv://liviu:caterinca@cluster0-rfqoo.mongodb.net", { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
